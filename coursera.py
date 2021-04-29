@@ -1,4 +1,4 @@
-'''
+e'''
 psajay@psajay-ubuntu:~$ python3 -m http.server
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
@@ -366,27 +366,201 @@ def addtwo (a, b)
 x = addtwo (3, 5)
 print (x)
 ------------------------------
-4.6 Write a program to prompt the user for hours and rate per hour using input to compute gross pay.
-Pay should be the normal rate for hours up to 40 and time-and-a-half for the hourly rate for all hours worked above 40 hours.
-Put the logic to do the computation of pay in a function called computepay() and use the function to do the computation.
-The function should return a value. Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75).
-You should use input to read a string and float() to convert the string to a number.
-Do not worry about error checking the user input unless you want to - you can assume the user types numbers properly.
-Do not name your variable sum or use the sum() function.
+
+# Addition using functions
+def func(a,b):
+    return a + b
+print (func (10, 20))
+
+# write a programs to find rectange araa
+def func(l,b):
+    result = l*b
+    return result
+
+c= (func (10, 20))
+print (c)
+
+# Write a programme to chose opration  (+, -, *, / ) & return results
+def oper (num1,num2):
+        while(True):
+            choice = input ("Please select your Operation:")
+            if (choice == '+'):
+                print (num1 + num2)
+                break
+            elif (choice == '-'):
+                print(num1 - num2)
+                break
+            elif (choice == '*'):
+                print(num1 * num2)
+                break
+            elif (choice == '/'):
+                print(num1 / num2)
+                break
+            else:
+                print('Wrong choice')
+a = float (input("Please enter your First number: "))
+b = float (input("Please enter your Second number: "))
+# a = int(a)
+# b = int (b)
+oper (a,b)
+--------------------------
+#Write a program to prompt the user for hours and rate per hour using input to compute gross pay.
+#Pay should be the normal rate for hours up to 40 and time-and-a-half for the hourly rate for all hours worked above 40 hours.
+#Put the logic to do the computation of pay in a function called computepay() and use the function to do the computation.
+# The function should return a value. Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75).
+# You should use input to read a string and float() to convert the string to a number.
+# Do not worry about error checking the user input unless you want to - you can assume the user types numbers properly.
+# Do not name your variable sum or use the sum() function
+def computepay (h, r):
+    if h == 40:
+        tpay = (h *r)
+        return tpay
+    elif h >= 40:
+        reg = (40 * r)
+        ot = ((r * 1.5) * (h - 40))
+        tpay = (reg + ot)
+        # tpay = ((r * 1.5) * (h - 40)) + (r * 40)
+        return tpay
+    else:
+        print = ("Less than 40 hrs this week")
+
+hrs = float (input ("number of hours : "))
+rate = float (input ("rate per hour : "))
+p = computepay(hrs, rate)
+print ("Pay ", p)
+-----------------------
+def computepay(h,r):
+    return 42.37
+
+hrs = input("Enter Hours:")
+p = computepay(10,20)
+print("Pay",p)
+----------------------
+# While loop with conditional statement.
+n = 5
+
+while n > 0 :
+    print (n)
+    n = n-1
+print ('Blast Off')
+print (n)
+
+# While loop with break
+while True:
+    line = input ('> ')
+    if line == 'done' :
+        break
+    print (line)
+print ('done!')
+
+while True:
+    line = input ('> ')
+    if line == '#' : # if input is #, dont print this
+        continue # contine to first line
+    if line == 'done':
+        break
+    print (line)
+print ('Done !')
+
+# definite Loops
+for i in [5, 4, 3, 2, 1] :
+    print (i)
+print ('Blast off !')
+
+friends = ['Joseph', 'Glenn', 'Sally']
+for friend in friends :
+    print ('Happy new year :', friend)
+print ('Done')
+
+largest_so_far = -1
+print('Before', largest_so_far)
+for the_num in (9, 14, 41, 12, 3, 74, 15) :
+    if the_num > largest_so_far :
+        largest_so_far = the_num
+    print (largest_so_far, the_num)
+print ('After', largest_so_far)
+
+
+# Counting in loop like line numbers
+zork = 0
+print ('Before', zork)
+for thing in (9, 14, 41, 12, 3, 74, 15) :
+    zork = zork + 1
+    print (zork, thing)
+print ('After', zork)
+
+# Counting in loop like line numbers
+zork = 0
+print ('Before', zork)
+for thing in (9, 14, 41, 12, 3, 74, 15) :
+    zork = zork + thing
+    print (thing, zork)
+print ('After', zork)
+
+# Finding average in loop
+count = 0
+sum = 0
+print ('Before', count, sum)
+for value in (9, 14, 41, 12, 3, 74, 15) :
+    count = count + 1
+    sum = sum + value
+    print (count, sum, value)
+print ('After', sum, sum/count)
+
+# Filtering in loop
+
+print ('Before')
+for value in (9, 14, 41, 12, 3, 74, 15) :
+    if value > 20:
+        print ('greater than 20', value)
+print ('After')
+
+# Changing value of a variable - Search using Boolean variable.
+
+found = False
+print ('Before', found)
+for value in (9, 14, 41, 12, 3, 74, 15) :
+    if value == 3 :
+        found = True
+    print(found, value)
+print ('After', found)
+
+# Smallest fo far non working sample
+# small_so_far = 100
+print('Before', small_so_far)
+for the_num in (9, 14, 41, 12, 3, 74, 15) :
+    if the_num < small_so_far :
+        small_so_far = the_num
+    print (small_so_far, the_num)
+print ('After', small_so_far)
+
+
+small_so_far = None
+print('Before', small_so_far)
+for value in (9, 14, 41, 12, 3, 74, 15) :
+    if small_so_far is None :
+        small_so_far = value
+    elif value < small_so_far :
+        small_so_far = value
+    print (small_so_far, value)
+print ('After', small_so_far)
+
+n = 0
+while n >= 0 :
+    print('Lather')
+    print('Rinse')
+print('Dry off!')
+
+
+zork = 0
+for thing in [9, 41, 12, 3, 74, 15] :
+    zork = zork + thing
+print('After', zork)
+
+n = 0
+while n > 0 :
+    print('Lather')
+    print('Rinse')
+print('Dry off!')
+
 '''
-def pay(h, r):
-    if h <= 40 :
-        print (h * r)
-    else :
-        print (h * 1.5)
-
-hrs = float(input("Enter Hours:"))
-rate = float(input("Enter Rate:"))
-pay(hrs, rate)
-
-print("Pay: ", pay)
-
-#pay = computepay(10,20)
-#print("Pay",pay)
-
-# pay = (hrs * (hrs - 40)) + (r * 40)
