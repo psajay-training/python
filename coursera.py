@@ -1,4 +1,4 @@
-e'''
+'''
 psajay@psajay-ubuntu:~$ python3 -m http.server
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
@@ -438,13 +438,12 @@ print("Pay",p)
 ----------------------
 # While loop with conditional statement.
 n = 5
-
 while n > 0 :
     print (n)
     n = n-1
 print ('Blast Off')
 print (n)
-
+--------------------------------------
 # While loop with break
 while True:
     line = input ('> ')
@@ -453,6 +452,8 @@ while True:
     print (line)
 print ('done!')
 
+# Definit Loops
+--------------------------------------
 while True:
     line = input ('> ')
     if line == '#' : # if input is #, dont print this
@@ -462,6 +463,7 @@ while True:
     print (line)
 print ('Done !')
 
+--------------------------------------
 # definite Loops
 for i in [5, 4, 3, 2, 1] :
     print (i)
@@ -471,7 +473,7 @@ friends = ['Joseph', 'Glenn', 'Sally']
 for friend in friends :
     print ('Happy new year :', friend)
 print ('Done')
-
+--------------------------------------
 largest_so_far = -1
 print('Before', largest_so_far)
 for the_num in (9, 14, 41, 12, 3, 74, 15) :
@@ -480,7 +482,7 @@ for the_num in (9, 14, 41, 12, 3, 74, 15) :
     print (largest_so_far, the_num)
 print ('After', largest_so_far)
 
-
+--------------------------------------
 # Counting in loop like line numbers
 zork = 0
 print ('Before', zork)
@@ -488,7 +490,7 @@ for thing in (9, 14, 41, 12, 3, 74, 15) :
     zork = zork + 1
     print (zork, thing)
 print ('After', zork)
-
+--------------------------------------
 # Counting in loop like line numbers
 zork = 0
 print ('Before', zork)
@@ -496,7 +498,7 @@ for thing in (9, 14, 41, 12, 3, 74, 15) :
     zork = zork + thing
     print (thing, zork)
 print ('After', zork)
-
+--------------------------------------
 # Finding average in loop
 count = 0
 sum = 0
@@ -506,7 +508,7 @@ for value in (9, 14, 41, 12, 3, 74, 15) :
     sum = sum + value
     print (count, sum, value)
 print ('After', sum, sum/count)
-
+--------------------------------------
 # Filtering in loop
 
 print ('Before')
@@ -514,7 +516,7 @@ for value in (9, 14, 41, 12, 3, 74, 15) :
     if value > 20:
         print ('greater than 20', value)
 print ('After')
-
+--------------------------------------
 # Changing value of a variable - Search using Boolean variable.
 
 found = False
@@ -524,7 +526,7 @@ for value in (9, 14, 41, 12, 3, 74, 15) :
         found = True
     print(found, value)
 print ('After', found)
-
+--------------------------------------
 # Smallest fo far non working sample
 # small_so_far = 100
 print('Before', small_so_far)
@@ -534,7 +536,7 @@ for the_num in (9, 14, 41, 12, 3, 74, 15) :
     print (small_so_far, the_num)
 print ('After', small_so_far)
 
-
+--------------------------------------
 small_so_far = None
 print('Before', small_so_far)
 for value in (9, 14, 41, 12, 3, 74, 15) :
@@ -545,22 +547,58 @@ for value in (9, 14, 41, 12, 3, 74, 15) :
     print (small_so_far, value)
 print ('After', small_so_far)
 
+--------------------------------------
 n = 0
 while n >= 0 :
     print('Lather')
     print('Rinse')
 print('Dry off!')
 
-
+--------------------------------------
 zork = 0
 for thing in [9, 41, 12, 3, 74, 15] :
     zork = zork + thing
 print('After', zork)
 
+--------------------------------------
 n = 0
 while n > 0 :
     print('Lather')
     print('Rinse')
 print('Dry off!')
+
+--------------------------------------
+num = 0
+tot = 0.0
+while True :
+    sval = input('enter a number: ')
+    if sval == 'done' :
+        break
+    try:
+        fval = float(sval)
+    except:
+        print ('Invalid Input')
+        continue
+    print(fval)
+    num = num + 1
+    tot = tot + fval
+
+print ('All Done')
+print (tot, num, tot/num)
+
+--------------------------------------
+# Write a program that repeatedly prompts a user for integer numbers until the user enters 'done'.
+# Once 'done' is entered, print out the largest and smallest of the numbers.
+# If the user enters anything other than a valid number catch it with a try/except and
+# put out an appropriate message and ignore the number. Enter 7, 2, bob, 10, and 4 and match the output below.
+
+largest = None
+smallest = None
+while True:
+    num = input("Enter a number: ")
+    if num == "done" : break
+    print(num)
+
+print("Maximum", largest)
 
 '''
