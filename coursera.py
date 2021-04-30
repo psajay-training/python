@@ -587,18 +587,55 @@ print ('All Done')
 print (tot, num, tot/num)
 
 --------------------------------------
-# Write a program that repeatedly prompts a user for integer numbers until the user enters 'done'.
-# Once 'done' is entered, print out the largest and smallest of the numbers.
-# If the user enters anything other than a valid number catch it with a try/except and
-# put out an appropriate message and ignore the number. Enter 7, 2, bob, 10, and 4 and match the output below.
+zork = 0
+for thing in [9, 41, 12, 3, 74, 15] :
+    zork = zork + thing
+print('After', zork)
 
-largest = None
-smallest = None
+n = 0
+while n > 0 :
+    print('Lather')
+    print('Rinse')
+print('Dry off!')
+
+-------------------------------------
+lst = []
+#print('Before', smallest )
+# print('Before', largest )
 while True:
     num = input("Enter a number: ")
-    if num == "done" : break
-    print(num)
+    if num == 'done':
+        break
+    try:
+        num = float(num)
+    except:
+        print('Invalid Input')
+        continue
+    lst.append(num)
+    print (lst)
+    # for value in (9, 14, 41, 12, 3, 74, 15) :
+    print("Maximum element in the list is :", max(lst), "\nMinimum element in the list is :", min(lst))
 
-print("Maximum", largest)
+-----------------------------------
+largest = None
+smallest = None
+lst = []
+while True:
+    num = input("Enter a number: ")
+    if num == 'done': break
+    #print(num)
+    try:
+        num = int (num)
+    except:
+        print('Invalid input')
+        continue
+    lst.append(num)
+    # print (lst)
+    if largest is None or num > largest:
+        largest = num
+    elif smallest is None or num < smallest:
+        smallest = num
+print("Maximum is", largest)
+print("Minimum is", smallest)
 
 '''
