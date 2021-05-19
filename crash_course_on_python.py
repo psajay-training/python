@@ -903,7 +903,6 @@ You can use the continue keyword to skip the current iteration and continue with
 
 If you want to learn more, check out this wiki page on for loops.
 # ------------------------------------------------
-'''
 # Question 2
 # Fill in the blanks to make the factorial function return the factorial of n.
 # Then, print the first 10 factorials (from 0 to 9) with the corresponding number.
@@ -912,26 +911,110 @@ If you want to learn more, check out this wiki page on for loops.
 
 def factorial(n):
     result = 1
-    for x in range(1,(n+1)):
+    for x in range(1,n):
         result = result * x
     return result
 
 for n in range(0,10):
     print(n, factorial(n+1))
-
+# Not quite. Remember that we want to print the first 10 factorials, starting from 0 to 9.
+# ------------------------------------------------
+# Write a script that prints the first 10 cube numbers (x**3), starting with x=1 and ending with x=10.
+for x in range(1,11):
+    print(x, (x**3))
 # ------------------------------------------------
 
+# The retry function tries to execute an operation that might fail, it retries the operation for a number of attempts.
+# Currently the code will keep executing the function even if it succeeds.
+# Fill in the blank so the code stops trying after the operation succeeded.
+def retry(operation, attempts):
+  for n in range(attempts):
+    if operation():
+      print("Attempt " + str(n) + " succeeded")
+      break
+    else:
+      print("Attempt " + str(n) + " failed")
+
+retry(create_user, 3)
+retry(stop_service, 5)
+# ------------------------------------------------
+# Write a script that prints the multiples of 7 between 0 and 100.
+# Print one multiple per line and avoid printing any numbers that aren't multiples of 7.
+# Remember that 0 is also a multiple of 7.
+for i in range(0,100,7):
+    print (i)
+------------------------------------------------
+num = 1
+if(num % 7==0):
+    print(num)
+else:
+    num = num + 1
+
+# Need to test this.
 # ------------------------------------------------
 
+def factorial (n):
+    if n < 2:
+        return 1
+    print (n)
+    return n * factorial (n-1)
+
+factorial (4)
 # ------------------------------------------------
 
+def factorial(n):
+    print ("Factorial called with " + str(n))
+    if n <2:
+        print ("Returning 1")
+        return 1
+    result = n * factorial(n-1)
+    print ("Returning " + str(result) + " for factorial of " + str(n))
+    return result
+
+factorial (4)
 # ------------------------------------------------
+#using recursion
+def sum_positive_numbers(n):
+  if n <= 1:
+      return n
+  return n + sum_positive_numbers(n-1)
+
+print(sum_positive_numbers(3)) # Should be 6
+print(sum_positive_numbers(5)) # Should be 15
 
 # ------------------------------------------------
+#using normal functions
+def sum_positive_numbers(n):
+  sums = 0
+  for v in range(1,n+1):
+    sums += v
+  return sums
 
+print(sum_positive_numbers(3)) # Should be 6
+print(sum_positive_numbers(5)) # Should be 15
 # ------------------------------------------------
+Additional Recursion Sources
 
+In the past videos, we visited the basic concepts of recursive functions.
+
+A recursive function must include a recursive case and base case.
+The recursive case calls the function again, with a different value.
+The base case returns a value without calling the same function.
+
+A recursive function will usually have this structure:
+Sample:
+
+def recursive_function(parameters):
+    if base_case_condition(parameters):
+        return base_case_value
+    recursive_function(modified_parameters)
+
+For more information on recursion, check out these resources:
+
+Wikipedia Recursion page : https://en.wikipedia.org/wiki/Recursion
+See what happens when you Search Google for Recursion
 # ------------------------------------------------
+'''
 
 # ------------------------------------------------
 
